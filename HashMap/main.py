@@ -36,6 +36,12 @@ class HashMap:
             ind = (ind + ord(letter) + hash(letter))%self.size
         return  ind
 
+    def keys(self):
+        K = []
+        for i in range(len(self.__arr)):
+            for k,v in self.__arr[i]: K.append(k)
+        return K
+
 
 if __name__ == '__main__':
     MAP = HashMap(10)
@@ -47,3 +53,4 @@ if __name__ == '__main__':
     print(f"Value of 2: {MAP.get(2)}")
     MAP.delete(3)
     print(f"Value of 3: {MAP.get(3,'Not Found')}")
+    print(f"Key: {MAP.keys()}")
